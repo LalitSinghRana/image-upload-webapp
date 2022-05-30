@@ -1,0 +1,28 @@
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    list-style-type: none;
+}
+
+ul > li {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    list-style-type: none;
+    margin: 12px;
+    height: 100px;
+    font-size: 40px;
+    color: white;
+}
+
+.initial {
+    opacity: 1;
+    border-radius: 10px;
+}
+
+.final {
+    opacity: 0.5;
+    border-radius: 10px;
+}

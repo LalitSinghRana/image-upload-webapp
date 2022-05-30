@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Popup from "./components/Popup/Popup.js";
+import consts from "./consts";
+import "./App.css";
 
 function App() {
+  // buttonPopup is used to open and close pop component
+  const [buttonPopup, setButtonPopup] = useState(false);
+  // url store the image url seleced by user
+  const [url, setUrl] = useState(consts.DEFAULT_STRING_URL);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <main>
+        <div className="url">
+          <p>{url}</p>
+        </div>
+        <button onClick={()=>setButtonPopup(true)} type="button">Select Image</button>
+      </main>
+      <Popup 
+        trigger={buttonPopup} 
+        setTrigger={setButtonPopup}
+        setUrl={setUrl}
+      />
+    </>
   );
-}
+};
 
 export default App;
+
